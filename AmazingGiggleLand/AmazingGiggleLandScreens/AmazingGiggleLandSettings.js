@@ -7,6 +7,7 @@ import {
   Image,
   ImageBackground,
   StyleSheet,
+  Platform,
 } from 'react-native';
 import AmazingGiggleLandLayout from '../AmazingGiggleLandComponents/AmazingGiggleLandLayout';
 import { useStore } from '../AmazingGiggleLandStore/amazingGiggleLandContext';
@@ -74,21 +75,23 @@ export default function AmazingGiggleLandSettings() {
         >
           <Text style={styles.giggleLandTitle}>Settings</Text>
 
-          <View style={styles.giggleLandRow}>
-            <Text style={styles.giggleLandItemText}>Sounds</Text>
-            <TouchableOpacity
-              onPress={() => giggleLandToggleSound(!isOnGiggleLandSound)}
-              activeOpacity={0.8}
-            >
-              <Image
-                source={
-                  isOnGiggleLandSound
-                    ? require('../../assets/images/gigglelandsetton.png')
-                    : require('../../assets/images/gigglelandsettoff.png')
-                }
-              />
-            </TouchableOpacity>
-          </View>
+          {Platform.OS === 'ios' && (
+            <View style={styles.giggleLandRow}>
+              <Text style={styles.giggleLandItemText}>Sounds</Text>
+              <TouchableOpacity
+                onPress={() => giggleLandToggleSound(!isOnGiggleLandSound)}
+                activeOpacity={0.8}
+              >
+                <Image
+                  source={
+                    isOnGiggleLandSound
+                      ? require('../../assets/images/gigglelandsetton.png')
+                      : require('../../assets/images/gigglelandsettoff.png')
+                  }
+                />
+              </TouchableOpacity>
+            </View>
+          )}
 
           <View style={styles.giggleLandRow}>
             <Text style={styles.giggleLandItemText}>Vibration</Text>
