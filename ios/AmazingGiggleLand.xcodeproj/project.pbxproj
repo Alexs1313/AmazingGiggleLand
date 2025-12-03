@@ -11,6 +11,13 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		D1F211292EDDF3C400BF108F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1F211282EDDF3C400BF108F /* AVFoundation.framework */; };
+		D1F2112B2EDDF3CB00BF108F /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1F2112A2EDDF3CB00BF108F /* AVKit.framework */; };
+		D1F2112D2EDDF3D200BF108F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1F2112C2EDDF3D200BF108F /* AudioToolbox.framework */; };
+		D1F2112F2EDF137300BF108F /* fireworks-08-419026.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D1F2112E2EDF137300BF108F /* fireworks-08-419026.mp3 */; };
+		D1F211312EDF172200BF108F /* crowd-shocked-reaction-352766.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D1F211302EDF172200BF108F /* crowd-shocked-reaction-352766.mp3 */; };
+		D1F211332EDF172700BF108F /* crowd-laughing-07-120585.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D1F211322EDF172700BF108F /* crowd-laughing-07-120585.mp3 */; };
+		D1F211352EDF172D00BF108F /* crowd-laughing-sound-effect-no-copyright-390899.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D1F211342EDF172D00BF108F /* crowd-laughing-sound-effect-no-copyright-390899.mp3 */; };
 		DD1140CBB22A27C6EFD1D63B /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +31,13 @@
 		5DCACB8F33CDC322A6C60F78 /* libPods-AmazingGiggleLand.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AmazingGiggleLand.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = AmazingGiggleLand/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = AmazingGiggleLand/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D1F211282EDDF3C400BF108F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D1F2112A2EDDF3CB00BF108F /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		D1F2112C2EDDF3D200BF108F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		D1F2112E2EDF137300BF108F /* fireworks-08-419026.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "fireworks-08-419026.mp3"; sourceTree = "<group>"; };
+		D1F211302EDF172200BF108F /* crowd-shocked-reaction-352766.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "crowd-shocked-reaction-352766.mp3"; sourceTree = "<group>"; };
+		D1F211322EDF172700BF108F /* crowd-laughing-07-120585.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "crowd-laughing-07-120585.mp3"; sourceTree = "<group>"; };
+		D1F211342EDF172D00BF108F /* crowd-laughing-sound-effect-no-copyright-390899.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "crowd-laughing-sound-effect-no-copyright-390899.mp3"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -32,6 +46,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1F2112D2EDDF3D200BF108F /* AudioToolbox.framework in Frameworks */,
+				D1F2112B2EDDF3CB00BF108F /* AVKit.framework in Frameworks */,
+				D1F211292EDDF3C400BF108F /* AVFoundation.framework in Frameworks */,
 				0C80B921A6F3F58F76C31292 /* libPods-AmazingGiggleLand.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -54,6 +71,9 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D1F2112C2EDDF3D200BF108F /* AudioToolbox.framework */,
+				D1F2112A2EDDF3CB00BF108F /* AVKit.framework */,
+				D1F211282EDDF3C400BF108F /* AVFoundation.framework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				5DCACB8F33CDC322A6C60F78 /* libPods-AmazingGiggleLand.a */,
 			);
@@ -75,6 +95,10 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				D1F2112E2EDF137300BF108F /* fireworks-08-419026.mp3 */,
+				D1F211302EDF172200BF108F /* crowd-shocked-reaction-352766.mp3 */,
+				D1F211322EDF172700BF108F /* crowd-laughing-07-120585.mp3 */,
+				D1F211342EDF172D00BF108F /* crowd-laughing-sound-effect-no-copyright-390899.mp3 */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -159,6 +183,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				D1F211312EDF172200BF108F /* crowd-shocked-reaction-352766.mp3 in Resources */,
+				D1F211352EDF172D00BF108F /* crowd-laughing-sound-effect-no-copyright-390899.mp3 in Resources */,
+				D1F2112F2EDF137300BF108F /* fireworks-08-419026.mp3 in Resources */,
+				D1F211332EDF172700BF108F /* crowd-laughing-07-120585.mp3 in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				DD1140CBB22A27C6EFD1D63B /* PrivacyInfo.xcprivacy in Resources */,
 			);
@@ -191,9 +219,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-AmazingGiggleLand/Pods-AmazingGiggleLand-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-AmazingGiggleLand/Pods-AmazingGiggleLand-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -230,9 +262,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-AmazingGiggleLand/Pods-AmazingGiggleLand-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-AmazingGiggleLand/Pods-AmazingGiggleLand-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -273,7 +309,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.AmazingGiggleLand;
 				PRODUCT_NAME = AmazingGiggleLand;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -300,7 +336,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.AmazingGiggleLand;
 				PRODUCT_NAME = AmazingGiggleLand;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -376,10 +412,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
@@ -448,10 +481,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;

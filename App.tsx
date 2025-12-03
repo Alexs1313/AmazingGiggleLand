@@ -1,28 +1,29 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import AmazingGiggleLandStack from './AmazingGiggleLand/AmazingGiggleLandNavigation/AmazingGiggleLandStack';
+import AmazingGiggleLandLoader from './AmazingGiggleLand/AmazingGiggleLandComponents/AmazingGiggleLandLoader';
+import { SoundProvider } from './AmazingGiggleLand/AmazingGiggleLandStore/amazingGiggleLandContext';
+import { NavigationContainer } from '@react-navigation/native';
+import { useEffect, useState } from 'react';
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
+const App = () => {
+  const [isProcessing, setIsProcessing] = useState(false);
 
-function App() {
-  const isDarkMode = useColorScheme() === 'dark';
+  useEffect(() => {
+    setTimeout(() => {
+      setIsProcessing(true);
+    }, 5000);
+  }, []);
 
   return (
-    <View style={styles.container}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <NewAppScreen templateFileName="App.tsx" />
-    </View>
+    <NavigationContainer>
+      <SoundProvider>
+        {isProcessing ? (
+          <AmazingGiggleLandStack />
+        ) : (
+          <AmazingGiggleLandLoader />
+        )}
+      </SoundProvider>
+    </NavigationContainer>
   );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+};
 
 export default App;
