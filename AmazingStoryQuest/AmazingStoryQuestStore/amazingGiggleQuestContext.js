@@ -7,7 +7,7 @@ export const useStore = () => {
   return useContext(StoreContext);
 };
 
-export const SoundProvider = ({ children }) => {
+export const ContextProvider = ({ children }) => {
   const [isOnGiggleLandVibration, setIsOnGiggleLandVibration] = useState(false);
   const [isOnGiggleLandSound, setIsOnGiggleLandSound] = useState(false);
   const [giggleLandFavorites, setGiggleLandFavorites] = useState([]);

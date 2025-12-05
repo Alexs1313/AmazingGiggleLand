@@ -1,19 +1,19 @@
 workflows:
   ios-workflow:
-    name: Amazing Giggle Land
+    name: Amazing Story Quest
     max_build_duration: 120
     instance_type: mac_mini_m2
     integrations:
-      app_store_connect: AmazingGiggleLandAPIKey
+      app_store_connect: AmazingStoryQuestAPIKey
     environment:
       ios_signing:
         distribution_type: app_store
-        bundle_identifier: com.AmazingGiggleLand
+        bundle_identifier: com.AmazingStoryQuest
       vars:
-        BUNDLE_ID: com.AmazingGiggleLand
+        BUNDLE_ID: com.AmazingStoryQuest
         XCODE_WORKSPACE: AmazingGiggleLand.xcworkspace
         XCODE_SCHEME: AmazingGiggleLand
-        APP_STORE_APPLE_ID: 6756045497
+        APP_STORE_APPLE_ID: 6756174765
     scripts:
       - name: Install npm dependencies
         script: |
@@ -44,4 +44,4 @@ workflows:
       app_store_connect:
         auth: integration
         submit_to_app_store: true
-        copyright: Amazing Giggle Land 2025
+        copyright: Amazing Story Quest 2025

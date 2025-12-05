@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
 import { View, Text, Image, StyleSheet, Dimensions } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import AmazingGiggleLandLayout from '../AmazingGiggleLandComponents/AmazingGiggleLandLayout';
+import AmazingGiggleLandLayout from '../AmazingStoryQuestComponents/AmazingGiggleLandLayout';
 import { useFocusEffect } from '@react-navigation/native';
-import { useStore } from '../AmazingGiggleLandStore/amazingGiggleLandContext';
+import { useStore } from '../AmazingStoryQuestStore/amazingGiggleQuestContext';
 
 const giggleLandStoryKey = 'GiggleStoriesMoodScore';
 const giggleLandQuizKey = 'GiggleQuizBestScore';
@@ -13,7 +13,7 @@ const giggleLandQuizMax = 20;
 
 const { height } = Dimensions.get('window');
 
-export default function AmazingGiggleLandMasksProgress() {
+export default function AmazingStoryQuestMasks() {
   const {
     giggleLandStoryScore,
     setGiggleLandStoryScore,

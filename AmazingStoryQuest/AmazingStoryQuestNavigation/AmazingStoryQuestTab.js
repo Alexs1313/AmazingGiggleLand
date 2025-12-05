@@ -1,18 +1,22 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import AmazingGiggleLandStories from '../AmazingGiggleLandScreens/AmazingGiggleLandStories';
-import AmazingGiggleLandMasks from '../AmazingGiggleLandScreens/AmazingGiggleLandMasks';
-import AmazingGiggleLandQuiz from '../AmazingGiggleLandScreens/AmazingGiggleLandQuiz';
-import AmazingGiggleLandSettings from '../AmazingGiggleLandScreens/AmazingGiggleLandSettings';
+import AmazingGiggleLandStories from '../AmazingStoryQuestScreens/AmazingStoryQuestStories';
+import AmazingGiggleLandMasks from '../AmazingStoryQuestScreens/AmazingStoryQuestMasks';
+import AmazingGiggleLandQuiz from '../AmazingStoryQuestScreens/AmazingStoryQuestQuiz';
+import AmazingGiggleLandSettings from '../AmazingStoryQuestScreens/AmazingStoryQuestSettings';
 import {
   Image,
   ImageBackground,
   StyleSheet,
   useWindowDimensions,
 } from 'react-native';
+import AmazingStoryQuestMasks from '../AmazingStoryQuestScreens/AmazingStoryQuestMasks';
+import AmazingStoryQuestStories from '../AmazingStoryQuestScreens/AmazingStoryQuestStories';
+import AmazingStoryQuestSettings from '../AmazingStoryQuestScreens/AmazingStoryQuestSettings';
+import AmazingStoryQuestQuiz from '../AmazingStoryQuestScreens/AmazingStoryQuestQuiz';
 
 const Tab = createBottomTabNavigator();
 
-const AmazingGiggleLandTab = () => {
+const AmazingStoryQuestTab = () => {
   const { width, height } = useWindowDimensions();
   const isLandscape = width > height;
 
@@ -33,14 +37,14 @@ const AmazingGiggleLandTab = () => {
         tabBarBackground: () => (
           <ImageBackground
             source={require('../../assets/images/gigglelandtab.png')}
-            style={{ height: 73, width: 226, alignSelf: 'center' }}
+            style={{ height: 71, width: 243, alignSelf: 'center' }}
           ></ImageBackground>
         ),
       }}
     >
       <Tab.Screen
-        name="AmazingGiggleLandStories"
-        component={AmazingGiggleLandStories}
+        name="AmazingStoryQuestStories"
+        component={AmazingStoryQuestStories}
         options={{
           tabBarIcon: ({ focused }) => (
             <>
@@ -58,8 +62,8 @@ const AmazingGiggleLandTab = () => {
         }}
       />
       <Tab.Screen
-        name="AmazingGiggleLandMasks"
-        component={AmazingGiggleLandMasks}
+        name="AmazingStoryQuestMasks"
+        component={AmazingStoryQuestMasks}
         options={{
           tabBarIcon: ({ focused }) => (
             <>
@@ -77,8 +81,8 @@ const AmazingGiggleLandTab = () => {
         }}
       />
       <Tab.Screen
-        name="AmazingGiggleLandQuiz"
-        component={AmazingGiggleLandQuiz}
+        name="AmazingStoryQuestQuiz"
+        component={AmazingStoryQuestQuiz}
         options={{
           tabBarIcon: ({ focused }) => (
             <>
@@ -96,8 +100,8 @@ const AmazingGiggleLandTab = () => {
         }}
       />
       <Tab.Screen
-        name="AmazingGiggleLandSettings"
-        component={AmazingGiggleLandSettings}
+        name="AmazingStoryQuestSettings"
+        component={AmazingStoryQuestSettings}
         options={{
           tabBarIcon: ({ focused }) => (
             <>
@@ -131,4 +135,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AmazingGiggleLandTab;
+export default AmazingStoryQuestTab;

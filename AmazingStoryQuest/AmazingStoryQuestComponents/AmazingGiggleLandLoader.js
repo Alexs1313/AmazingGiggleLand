@@ -1,8 +1,9 @@
 import React from 'react';
 import { WebView } from 'react-native-webview';
-import { View, StyleSheet, ImageBackground } from 'react-native';
+import { View, StyleSheet, ImageBackground, Image } from 'react-native';
+import AmazingGiggleLandLayout from './AmazingGiggleLandLayout';
 
-const AmazingGiggleLandLoader = () => {
+const AmazingStoryQuestLoader = () => {
   const welcomeLoaderHTML = `
 <!DOCTYPE html>
 <html>
@@ -69,10 +70,11 @@ const AmazingGiggleLandLoader = () => {
   `;
 
   return (
-    <ImageBackground
-      source={require('../../assets/images/gigglelandloaderbg.png')}
-      style={{ flex: 1 }}
-    >
+    <AmazingGiggleLandLayout>
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Image source={require('../../assets/images/gigglelandldr.png')} />
+      </View>
+
       <View style={styles.loaderWrapper}>
         <WebView
           originWhitelist={['*']}
@@ -81,7 +83,7 @@ const AmazingGiggleLandLoader = () => {
           scrollEnabled={false}
         />
       </View>
-    </ImageBackground>
+    </AmazingGiggleLandLayout>
   );
 };
 
@@ -95,4 +97,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AmazingGiggleLandLoader;
+export default AmazingStoryQuestLoader;

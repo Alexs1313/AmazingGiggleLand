@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import AmazingGiggleLandLayout from '../AmazingGiggleLandComponents/AmazingGiggleLandLayout';
-import { useStore } from '../AmazingGiggleLandStore/amazingGiggleLandContext';
+import AmazingGiggleLandLayout from '../AmazingStoryQuestComponents/AmazingGiggleLandLayout';
+import { useStore } from '../AmazingStoryQuestStore/amazingGiggleQuestContext';
 import {
   View,
   Text,
@@ -12,12 +12,12 @@ import {
   Dimensions,
   Vibration,
 } from 'react-native';
-import { giggleLandQuizData } from '../AmazingGiggleLandData/giggleLandQuizData';
+import { giggleLandQuizData } from '../AmazingStoryQuestData/giggleLandQuizData';
 const { height } = Dimensions.get('window');
 
 const giggleLandQuizStorageKey = 'GiggleQuizBestScore';
 
-export default function AmazingGiggleLandQuiz() {
+export default function AmazingStoryQuestQuiz() {
   const [giggleLandScreen, setGiggleLandScreen] = useState('intro');
   const [giggleLandIndex, setGiggleLandIndex] = useState(0);
   const [giggleLandSelected, setGiggleLandSelected] = useState(null);
@@ -142,10 +142,7 @@ export default function AmazingGiggleLandQuiz() {
               Welcome to the Joke Quiz!
             </Text>
             <Text style={styles.giggleLandIntroText}>
-              Each question gives you an unfinished joke — and your task is to
-              pick the funniest ending. Choose wisely: some answers make no
-              sense, some are mildly funny, and one is truly brilliant. Let’s
-              see how your humor score turns out!
+              {`Each question gives you an unfinished joke — and your task is to pick the funniest ending. Choose wisely: some answers make no sense, some are mildly funny, and one is truly brilliant. Let’s see how your humor score turns out!`}
             </Text>
           </ImageBackground>
 
@@ -342,8 +339,8 @@ const styles = StyleSheet.create({
     paddingBottom: 130,
   },
   giggleLandIntroBox: {
-    width: 347,
-    height: 388,
+    width: 344,
+    height: 471,
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
@@ -354,20 +351,20 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     textAlign: 'center',
     marginBottom: 14,
-    color: '#1B1B1B',
+    color: '#fff',
     width: '80%',
   },
   giggleLandIntroText: {
     fontSize: 16,
     textAlign: 'center',
     fontStyle: 'italic',
-    color: '#1B1B1B',
-    paddingHorizontal: 20,
+    color: '#fff',
+    paddingHorizontal: 24,
     lineHeight: 20,
   },
   giggleLandQuestionBox: {
-    width: 402,
-    minHeight: 215,
+    width: 379,
+    minHeight: 190,
     alignSelf: 'center',
     padding: 20,
     marginTop: height * 0.09,
@@ -379,8 +376,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontWeight: '700',
     fontSize: 18,
-    color: '#1B1B1B',
-    paddingHorizontal: 10,
+    color: '#fff',
+    paddingHorizontal: 20,
     marginBottom: 15,
   },
   giggleLandPaginationRow: {
@@ -395,14 +392,15 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   giggleLandDotActive: {
-    backgroundColor: '#FFE84A',
+    backgroundColor: '#FFF',
   },
   giggleLandDotInactive: {
     backgroundColor: '#000',
+    opacity: 0.3,
   },
   giggleLandOption: {
-    width: 316,
-    minHeight: 97,
+    width: 348,
+    minHeight: 93,
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'center',
@@ -443,8 +441,8 @@ const styles = StyleSheet.create({
     gap: 30,
   },
   giggleLandResultBox: {
-    width: 370,
-    minHeight: 203,
+    width: 361,
+    minHeight: 218,
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
@@ -453,7 +451,7 @@ const styles = StyleSheet.create({
   giggleLandResultText: {
     fontSize: 18,
     textAlign: 'center',
-    color: '#1B1B1B',
+    color: '#fff',
     fontWeight: '700',
   },
 });

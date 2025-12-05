@@ -9,15 +9,15 @@ import {
   StyleSheet,
   Platform,
 } from 'react-native';
-import AmazingGiggleLandLayout from '../AmazingGiggleLandComponents/AmazingGiggleLandLayout';
-import { useStore } from '../AmazingGiggleLandStore/amazingGiggleLandContext';
+import AmazingGiggleLandLayout from '../AmazingStoryQuestComponents/AmazingGiggleLandLayout';
+import { useStore } from '../AmazingStoryQuestStore/amazingGiggleQuestContext';
 
 const giggleLandStorageFavorites = 'GiggleFavorites';
 const giggleLandStorageRatings = 'GiggleRatings';
 const giggleLandStorageStoryMood = 'GiggleStoriesMoodScore';
 const giggleLandStorageQuizScore = 'GiggleQuizBestScore';
 
-export default function AmazingGiggleLandSettings() {
+export default function AmazingStoryQuestSettings() {
   const [giggleLandDialog, setGiggleLandDialog] = useState(null);
   const {
     isOnGiggleLandVibration,
@@ -130,6 +130,7 @@ export default function AmazingGiggleLandSettings() {
             <Text style={styles.giggleLandItemText}>Clear Favorite</Text>
             <Image
               source={require('../../assets/images/gigglelandclear.png')}
+              style={{ tintColor: '#fff' }}
             />
           </TouchableOpacity>
         </ImageBackground>
@@ -137,7 +138,7 @@ export default function AmazingGiggleLandSettings() {
         {giggleLandDialog && (
           <View style={styles.giggleLandOverlay}>
             <ImageBackground
-              source={require('../../assets/images/gigglelandmodalbox.png')}
+              source={require('../../assets/images/gigglelandmodalbox2.png')}
               style={styles.giggleLandDialog}
             >
               <Text style={styles.giggleLandDialogText}>
@@ -181,20 +182,20 @@ const styles = StyleSheet.create({
     paddingBottom: 130,
   },
   giggleLandBoard: {
-    width: 347,
+    width: 374,
     paddingTop: 40,
-    height: 388,
-    paddingHorizontal: 45,
+    height: 512,
+    paddingHorizontal: 60,
     paddingBottom: 40,
     alignSelf: 'center',
+    justifyContent: 'center',
   },
   giggleLandTitle: {
     fontSize: 20,
     fontWeight: '700',
-    color: '#1B1B1B',
+    color: '#fff',
     textAlign: 'center',
-    marginBottom: 30,
-    marginTop: 10,
+    marginBottom: 35,
   },
   giggleLandRow: {
     flexDirection: 'row',
@@ -205,7 +206,7 @@ const styles = StyleSheet.create({
   giggleLandItemText: {
     fontSize: 20,
     fontWeight: '700',
-    color: '#1B1B1B',
+    color: '#fff',
   },
   giggleLandOverlay: {
     position: 'absolute',
@@ -218,8 +219,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   giggleLandDialog: {
-    width: 370,
-    height: 203,
+    width: 360,
+    height: 182,
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 20,
@@ -228,7 +229,7 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: '700',
     textAlign: 'center',
-    color: '#1B1B1B',
+    color: '#fff',
   },
   giggleLandDialogBtns: {
     flexDirection: 'row',

@@ -1,4 +1,4 @@
-import AmazingGiggleLandLayout from '../AmazingGiggleLandComponents/AmazingGiggleLandLayout';
+import AmazingGiggleLandLayout from '../AmazingStoryQuestComponents/AmazingGiggleLandLayout';
 import { useState } from 'react';
 import {
   Image,
@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-const AmazingGiggleLandOnboard = () => {
+const AmazingStoryQuestOnboarding = () => {
   const [giggleLandCurrentStep, setGiggleLandCurrentStep] = useState(0);
   const navigation = useNavigation();
 
@@ -68,7 +68,7 @@ const AmazingGiggleLandOnboard = () => {
           activeOpacity={0.7}
           onPress={() =>
             giggleLandCurrentStep === 3
-              ? navigation.replace('AmazingGiggleLandTab')
+              ? navigation.replace('AmazingStoryQuestTab')
               : setGiggleLandCurrentStep(giggleLandCurrentStep + 1)
           }
         >
@@ -89,24 +89,24 @@ const styles = StyleSheet.create({
   giggleLandTitle: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#1B1B1B',
+    color: '#fff',
     textAlign: 'center',
     marginBottom: 12,
   },
   giggleLandSubtitle: {
     fontSize: 18,
-    color: '#1B1B1B',
+    color: '#fff',
     textAlign: 'center',
     fontStyle: 'italic',
     fontWeight: '400',
   },
   giggleLandBoardCont: {
-    width: 402,
-    height: 215,
+    width: 371,
+    height: 271,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingHorizontal: 25,
+    paddingHorizontal: 35,
   },
 });
 
-export default AmazingGiggleLandOnboard;
+export default AmazingStoryQuestOnboarding;
