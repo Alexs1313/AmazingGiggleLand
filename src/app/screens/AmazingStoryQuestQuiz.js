@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import AmazingGiggleLandLayout from '../AmazingStoryQuestComponents/AmazingGiggleLandLayout';
-import { useStore } from '../AmazingStoryQuestStore/amazingGiggleQuestContext';
+import AmazingGiggleLandLayout from '../../ui/layout/AmazingGiggleLandLayout';
+import { useStore } from '../../core/storage/amazingGiggleQuestContext';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -12,7 +12,7 @@ import {
   Dimensions,
   Vibration,
 } from 'react-native';
-import { giggleLandQuizData } from '../AmazingStoryQuestData/giggleLandQuizData';
+import { giggleLandQuizData } from '../../core/consts/giggleLandQuizData';
 const { height } = Dimensions.get('window');
 
 const giggleLandQuizStorageKey = 'GiggleQuizBestScore';
@@ -135,7 +135,7 @@ export default function AmazingStoryQuestQuiz() {
       <AmazingGiggleLandLayout>
         <View style={styles.giggleLandCenter}>
           <ImageBackground
-            source={require('../../assets/images/storyquizintr.png')}
+            source={require('../../../assets/images/storyquizintr.png')}
             style={styles.giggleLandIntroBox}
           >
             <Text style={styles.giggleLandTitle}>
@@ -147,7 +147,9 @@ export default function AmazingStoryQuestQuiz() {
           </ImageBackground>
 
           <TouchableOpacity onPress={giggleLandStartQuiz} activeOpacity={0.7}>
-            <Image source={require('../../assets/images/gigglelandnext.png')} />
+            <Image
+              source={require('../../../assets/images/gigglelandnext.png')}
+            />
           </TouchableOpacity>
         </View>
       </AmazingGiggleLandLayout>
@@ -162,7 +164,7 @@ export default function AmazingStoryQuestQuiz() {
         {giggleLandExitDialog && (
           <View style={styles.giggleLandDialogOverlay}>
             <ImageBackground
-              source={require('../../assets/images/storyquizmodal.png')}
+              source={require('../../../assets/images/storyquizmodal.png')}
               style={styles.giggleLandDialogBox}
             >
               <Text style={styles.giggleLandDialogText}>
@@ -174,12 +176,12 @@ export default function AmazingStoryQuestQuiz() {
                   onPress={() => setGiggleLandExitDialog(false)}
                 >
                   <Image
-                    source={require('../../assets/images/storydetailsclose.png')}
+                    source={require('../../../assets/images/storydetailsclose.png')}
                   />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={giggleLandExitQuiz}>
                   <Image
-                    source={require('../../assets/images/gigglelandyes.png')}
+                    source={require('../../../assets/images/gigglelandyes.png')}
                   />
                 </TouchableOpacity>
               </View>
@@ -188,7 +190,7 @@ export default function AmazingStoryQuestQuiz() {
         )}
 
         <ImageBackground
-          source={require('../../assets/images/gigglelandquest.png')}
+          source={require('../../../assets/images/gigglelandquest.png')}
           style={styles.giggleLandQuestionBox}
         >
           <Text style={styles.giggleLandQuestion}>
@@ -215,15 +217,15 @@ export default function AmazingStoryQuestQuiz() {
               const giggleLandIsSelected =
                 giggleLandSelected === giggleLandOptIdx;
 
-              let giggleLandBg = require('../../assets/images/gigglelandoptionnorm.png');
+              let giggleLandBg = require('../../../assets/images/gigglelandoptionnorm.png');
 
               if (giggleLandConfirmed && giggleLandIsSelected) {
                 if (giggleLandOption.points === 2) {
-                  giggleLandBg = require('../../assets/images/gigglelandoptioncorr.png');
+                  giggleLandBg = require('../../../assets/images/gigglelandoptioncorr.png');
                 } else if (giggleLandOption.points === 1) {
-                  giggleLandBg = require('../../assets/images/gigglelandoptionmed.png');
+                  giggleLandBg = require('../../../assets/images/gigglelandoptionmed.png');
                 } else {
-                  giggleLandBg = require('../../assets/images/gigglelandoptionwrong.png');
+                  giggleLandBg = require('../../../assets/images/gigglelandoptionwrong.png');
                 }
               }
 
@@ -254,7 +256,7 @@ export default function AmazingStoryQuestQuiz() {
 
           {giggleLandShowConfetti && (
             <Image
-              source={require('../../assets/images/confettiBig.gif')}
+              source={require('../../../assets/images/confettiBig.gif')}
               style={{
                 position: 'absolute',
                 alignSelf: 'center',
@@ -274,7 +276,7 @@ export default function AmazingStoryQuestQuiz() {
             marginBottom: 120,
           }}
         >
-          <Image source={require('../../assets/images/gigglelandyes.png')} />
+          <Image source={require('../../../assets/images/gigglelandyes.png')} />
         </TouchableOpacity>
       </AmazingGiggleLandLayout>
     );
@@ -289,15 +291,15 @@ export default function AmazingStoryQuestQuiz() {
           <Image
             source={
               giggleLandIsGood
-                ? require('../../assets/images/gigglelandgoodres.png')
-                : require('../../assets/images/gigglelandbadres.png')
+                ? require('../../../assets/images/gigglelandgoodres.png')
+                : require('../../../assets/images/gigglelandbadres.png')
             }
             style={{ top: 40, zIndex: 1 }}
           />
 
           <View>
             <ImageBackground
-              source={require('../../assets/images/gigglelandresbox.png')}
+              source={require('../../../assets/images/gigglelandresbox.png')}
               style={styles.giggleLandResultBox}
             >
               <Text style={styles.giggleLandResultText}>
@@ -310,7 +312,7 @@ export default function AmazingStoryQuestQuiz() {
 
             {giggleLandShowFinalConfetti && (
               <Image
-                source={require('../../assets/images/fireworkMany.gif')}
+                source={require('../../../assets/images/fireworkMany.gif')}
                 style={{
                   position: 'absolute',
                   alignSelf: 'center',
@@ -321,7 +323,9 @@ export default function AmazingStoryQuestQuiz() {
           </View>
 
           <TouchableOpacity onPress={() => setGiggleLandScreen('intro')}>
-            <Image source={require('../../assets/images/gigglelandrest.png')} />
+            <Image
+              source={require('../../../assets/images/gigglelandrest.png')}
+            />
           </TouchableOpacity>
         </View>
       </AmazingGiggleLandLayout>

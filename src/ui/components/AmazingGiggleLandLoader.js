@@ -1,7 +1,7 @@
 import React from 'react';
 import { WebView } from 'react-native-webview';
-import { View, StyleSheet, ImageBackground, Image } from 'react-native';
-import AmazingGiggleLandLayout from './AmazingGiggleLandLayout';
+import { View, StyleSheet, Image } from 'react-native';
+import AmazingGiggleLandLayout from '../layout/AmazingGiggleLandLayout';
 
 const AmazingStoryQuestLoader = () => {
   const welcomeLoaderHTML = `
@@ -72,7 +72,7 @@ const AmazingStoryQuestLoader = () => {
   return (
     <AmazingGiggleLandLayout>
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Image source={require('../../assets/images/gigglelandldr.png')} />
+        <Image source={require('../../../assets/images/gigglelandldr.png')} />
       </View>
 
       <View style={styles.loaderWrapper}>

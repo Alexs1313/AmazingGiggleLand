@@ -3,7 +3,7 @@ import { ImageBackground, ScrollView } from 'react-native';
 const AmazingGiggleLandLayout = ({ children }) => {
   return (
     <ImageBackground
-      source={require('../../assets/images/gigglelandbg.png')}
+      source={require('../../../assets/images/gigglelandbg.png')}
       style={{ flex: 1 }}
     >
       <ScrollView

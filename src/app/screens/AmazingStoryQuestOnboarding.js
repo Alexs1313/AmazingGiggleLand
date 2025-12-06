@@ -1,5 +1,4 @@
-import AmazingGiggleLandLayout from '../AmazingStoryQuestComponents/AmazingGiggleLandLayout';
-import { useState } from 'react';
+import AmazingGiggleLandLayout from '../../ui/layout/AmazingGiggleLandLayout';
 import {
   Image,
   ImageBackground,
@@ -9,6 +8,7 @@ import {
   View,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { useState } from 'react';
 
 const AmazingStoryQuestOnboarding = () => {
   const [giggleLandCurrentStep, setGiggleLandCurrentStep] = useState(0);
@@ -18,7 +18,7 @@ const AmazingStoryQuestOnboarding = () => {
     <AmazingGiggleLandLayout>
       <View style={styles.giggleLandOnboardContainer}>
         <ImageBackground
-          source={require('../../assets/images/gigglelandboard.png')}
+          source={require('../../../assets/images/gigglelandboard.png')}
           style={styles.giggleLandBoardCont}
         >
           <Text style={styles.giggleLandTitle}>
@@ -41,25 +41,25 @@ const AmazingStoryQuestOnboarding = () => {
 
         {giggleLandCurrentStep === 0 && (
           <Image
-            source={require('../../assets/images/gigglelandon1.png')}
+            source={require('../../../assets/images/gigglelandon1.png')}
             style={{ marginBottom: 130, marginTop: 90 }}
           />
         )}
         {giggleLandCurrentStep === 1 && (
           <Image
-            source={require('../../assets/images/gigglelandon2.png')}
+            source={require('../../../assets/images/gigglelandon2.png')}
             style={{ marginBottom: 24, marginTop: 30 }}
           />
         )}
         {giggleLandCurrentStep === 2 && (
           <Image
-            source={require('../../assets/images/gigglelandon3.png')}
+            source={require('../../../assets/images/gigglelandon3.png')}
             style={{ marginBottom: 24 }}
           />
         )}
         {giggleLandCurrentStep === 3 && (
           <Image
-            source={require('../../assets/images/gigglelandon4.png')}
+            source={require('../../../assets/images/gigglelandon4.png')}
             style={{ marginBottom: 47, marginTop: 24 }}
           />
         )}
@@ -72,7 +72,9 @@ const AmazingStoryQuestOnboarding = () => {
               : setGiggleLandCurrentStep(giggleLandCurrentStep + 1)
           }
         >
-          <Image source={require('../../assets/images/gigglelandnext.png')} />
+          <Image
+            source={require('../../../assets/images/gigglelandnext.png')}
+          />
         </TouchableOpacity>
       </View>
     </AmazingGiggleLandLayout>

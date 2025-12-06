@@ -1,18 +1,14 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import AmazingGiggleLandStories from '../AmazingStoryQuestScreens/AmazingStoryQuestStories';
-import AmazingGiggleLandMasks from '../AmazingStoryQuestScreens/AmazingStoryQuestMasks';
-import AmazingGiggleLandQuiz from '../AmazingStoryQuestScreens/AmazingStoryQuestQuiz';
-import AmazingGiggleLandSettings from '../AmazingStoryQuestScreens/AmazingStoryQuestSettings';
 import {
   Image,
   ImageBackground,
   StyleSheet,
   useWindowDimensions,
 } from 'react-native';
-import AmazingStoryQuestMasks from '../AmazingStoryQuestScreens/AmazingStoryQuestMasks';
-import AmazingStoryQuestStories from '../AmazingStoryQuestScreens/AmazingStoryQuestStories';
-import AmazingStoryQuestSettings from '../AmazingStoryQuestScreens/AmazingStoryQuestSettings';
-import AmazingStoryQuestQuiz from '../AmazingStoryQuestScreens/AmazingStoryQuestQuiz';
+import AmazingStoryQuestStories from '../screens/AmazingStoryQuestStories';
+import AmazingStoryQuestMasks from '../screens/AmazingStoryQuestMasks';
+import AmazingStoryQuestQuiz from '../screens/AmazingStoryQuestQuiz';
+import AmazingStoryQuestSettings from '../screens/AmazingStoryQuestSettings';
 
 const Tab = createBottomTabNavigator();
 
@@ -36,7 +32,7 @@ const AmazingStoryQuestTab = () => {
         tabBarLabelPosition: 'below-icon',
         tabBarBackground: () => (
           <ImageBackground
-            source={require('../../assets/images/gigglelandtab.png')}
+            source={require('../../../assets/images/gigglelandtab.png')}
             style={{ height: 71, width: 243, alignSelf: 'center' }}
           ></ImageBackground>
         ),
@@ -50,11 +46,11 @@ const AmazingStoryQuestTab = () => {
             <>
               {focused ? (
                 <Image
-                  source={require('../../assets/images/gigglelandtab1foc.png')}
+                  source={require('../../../assets/images/gigglelandtab1foc.png')}
                 />
               ) : (
                 <Image
-                  source={require('../../assets/images/gigglelandtab1.png')}
+                  source={require('../../../assets/images/gigglelandtab1.png')}
                 />
               )}
             </>
@@ -69,11 +65,11 @@ const AmazingStoryQuestTab = () => {
             <>
               {focused ? (
                 <Image
-                  source={require('../../assets/images/gigglelandtab2act.png')}
+                  source={require('../../../assets/images/gigglelandtab2act.png')}
                 />
               ) : (
                 <Image
-                  source={require('../../assets/images/gigglelandtab2.png')}
+                  source={require('../../../assets/images/gigglelandtab2.png')}
                 />
               )}
             </>
@@ -88,11 +84,11 @@ const AmazingStoryQuestTab = () => {
             <>
               {focused ? (
                 <Image
-                  source={require('../../assets/images/gigglelandtab3act.png')}
+                  source={require('../../../assets/images/gigglelandtab3act.png')}
                 />
               ) : (
                 <Image
-                  source={require('../../assets/images/gigglelandtab3.png')}
+                  source={require('../../../assets/images/gigglelandtab3.png')}
                 />
               )}
             </>
@@ -107,11 +103,11 @@ const AmazingStoryQuestTab = () => {
             <>
               {focused ? (
                 <Image
-                  source={require('../../assets/images/gigglelandtab4act.png')}
+                  source={require('../../../assets/images/gigglelandtab4act.png')}
                 />
               ) : (
                 <Image
-                  source={require('../../assets/images/gigglelandtab4.png')}
+                  source={require('../../../assets/images/gigglelandtab4.png')}
                 />
               )}
             </>

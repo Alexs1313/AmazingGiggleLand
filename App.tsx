@@ -1,8 +1,9 @@
-import { ContextProvider } from './AmazingStoryQuest/AmazingStoryQuestStore/amazingGiggleQuestContext';
+import { SoundProvider } from './src/core/storage/amazingGiggleQuestContext';
+
 import { NavigationContainer } from '@react-navigation/native';
 import { useEffect, useState } from 'react';
-import AmazingStoryQuestStack from './AmazingStoryQuest/AmazingStoryQuestNavigation/AmazingStoryQuestStack';
-import AmazingStoryQuestLoader from './AmazingStoryQuest/AmazingStoryQuestComponents/AmazingGiggleLandLoader';
+import AmazingStoryQuestLoader from './src/ui/components/AmazingGiggleLandLoader';
+import AmazingStoryQuestStack from './src/app/routes/AmazingStoryQuestStack';
 
 const App = () => {
   const [isProcessing, setIsProcessing] = useState(false);
@@ -15,13 +16,13 @@ const App = () => {
 
   return (
     <NavigationContainer>
-      <ContextProvider>
+      <SoundProvider>
         {isProcessing ? (
           <AmazingStoryQuestStack />
         ) : (
           <AmazingStoryQuestLoader />
         )}
-      </ContextProvider>
+      </SoundProvider>
     </NavigationContainer>
   );
 };

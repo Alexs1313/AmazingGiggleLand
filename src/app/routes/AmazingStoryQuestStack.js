@@ -1,6 +1,6 @@
 import { createStackNavigator } from '@react-navigation/stack';
-import AmazingStoryQuestOnboarding from '../AmazingStoryQuestScreens/AmazingStoryQuestOnboarding';
 import AmazingStoryQuestTab from './AmazingStoryQuestTab';
+import AmazingStoryQuestOnboarding from '../screens/AmazingStoryQuestOnboarding';
 
 const Stack = createStackNavigator();
 
@@ -8,8 +8,8 @@ const AmazingStoryQuestStack = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen
-        name="AmazingStoryQuestOnboarding"
-        component={AmazingStoryQuestOnboarding}
+        name="AmazingStoryQuestOnboardin"
+        component={AmazingStoryQuestOnboardin}
       />
       <Stack.Screen
         name="AmazingStoryQuestTab"

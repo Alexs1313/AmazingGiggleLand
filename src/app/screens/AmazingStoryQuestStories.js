@@ -1,7 +1,7 @@
-import React, { useCallback, useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import AmazingGiggleLandLayout from '../AmazingStoryQuestComponents/AmazingGiggleLandLayout';
-import { useStore } from '../AmazingStoryQuestStore/amazingGiggleQuestContext';
+import AmazingGiggleLandLayout from '../../ui/layout/AmazingGiggleLandLayout';
+import { useStore } from '../../core/storage/amazingGiggleQuestContext';
+import React, { useCallback, useState } from 'react';
 import {
   View,
   Text,
@@ -16,7 +16,7 @@ import {
 import { useFocusEffect } from '@react-navigation/native';
 
 const { height } = Dimensions.get('window');
-import { giggleLandStoriesData } from '../AmazingStoryQuestData/giggleLandQuizData';
+import { giggleLandStoriesData } from '../../core/consts/giggleLandQuizData';
 
 const GIGGLE_LAND_STORY_MOOD = 'GiggleStoriesMoodScore';
 const GIGGLE_LAND_FAVORITES = 'GiggleFavorites';
@@ -128,7 +128,7 @@ const AmazingStoryQuestStories = () => {
 
     return (
       <ImageBackground
-        source={require('../../assets/images/gigglelanddetbg.png')}
+        source={require('../../../assets/images/gigglelanddetbg.png')}
         style={{ flex: 1 }}
       >
         <ScrollView
@@ -162,8 +162,8 @@ const AmazingStoryQuestStories = () => {
                 <Image
                   source={
                     giggleLandFavorites.includes(story.id)
-                      ? require('../../assets/images/starbigOn.png')
-                      : require('../../assets/images/starbigOff.png')
+                      ? require('../../../assets/images/starbigOn.png')
+                      : require('../../../assets/images/starbigOff.png')
                   }
                 />
               </TouchableOpacity>
@@ -177,7 +177,7 @@ const AmazingStoryQuestStories = () => {
                     <Text style={{ fontSize: 40, marginHorizontal: 4 }}>
                       {giggleLandRatings[story.id] >= n ? (
                         <Image
-                          source={require('../../assets/images/gigglelandlolact.png')}
+                          source={require('../../../assets/images/gigglelandlolact.png')}
                           style={{
                             width: 26,
                             height: 24,
@@ -185,7 +185,7 @@ const AmazingStoryQuestStories = () => {
                         />
                       ) : (
                         <Image
-                          source={require('../../assets/images/gigglelandlol.png')}
+                          source={require('../../../assets/images/gigglelandlol.png')}
                           style={{
                             width: 26,
                             height: 24,
@@ -202,7 +202,7 @@ const AmazingStoryQuestStories = () => {
                 onPress={() => giggleLandShareStory(story.title, story.text)}
               >
                 <Image
-                  source={require('../../assets/images/gigglelandshr.png')}
+                  source={require('../../../assets/images/gigglelandshr.png')}
                 />
               </TouchableOpacity>
             </View>
@@ -228,7 +228,7 @@ const AmazingStoryQuestStories = () => {
             activeOpacity={0.7}
           >
             <ImageBackground
-              source={require('../../assets/images/tabOn.png')}
+              source={require('../../../assets/images/tabOn.png')}
               style={[
                 styles.giggleLandTabContainer,
                 giggleLandTab === 'favorite'
@@ -249,7 +249,7 @@ const AmazingStoryQuestStories = () => {
             activeOpacity={0.7}
           >
             <ImageBackground
-              source={require('../../assets/images/tabOn.png')}
+              source={require('../../../assets/images/tabOn.png')}
               style={[
                 styles.giggleLandTabContainer,
                 giggleLandTab === 'favorite'
@@ -275,7 +275,7 @@ const AmazingStoryQuestStories = () => {
               }}
             >
               <ImageBackground
-                source={require('../../assets/images/gigglelandmodalbox.png')}
+                source={require('../../../assets/images/gigglelandmodalbox.png')}
                 style={styles.giggleLandEmptyBoard}
               >
                 <Text
@@ -294,7 +294,7 @@ const AmazingStoryQuestStories = () => {
               </ImageBackground>
 
               <Image
-                source={require('../../assets/images/gigglelandemptystar.png')}
+                source={require('../../../assets/images/gigglelandemptystar.png')}
                 style={{ tintColor: '#00fbffff' }}
               />
             </View>
@@ -302,7 +302,7 @@ const AmazingStoryQuestStories = () => {
         {giggleLandVisibleStories.map(story => (
           <View key={story.id}>
             <ImageBackground
-              source={require('../../assets/images/storycardbg.png')}
+              source={require('../../../assets/images/storycardbg.png')}
               style={styles.giggleLandCardBoard}
             >
               <View style={{ flexDirection: 'row' }}>
@@ -325,7 +325,7 @@ const AmazingStoryQuestStories = () => {
                       <Text key={n} style={{ fontSize: 22, marginRight: 6 }}>
                         {giggleLandRatings[story.id] >= n ? (
                           <Image
-                            source={require('../../assets/images/gigglelandlolact.png')}
+                            source={require('../../../assets/images/gigglelandlolact.png')}
                             style={{
                               tintColor: '#f5ae08d6',
                               width: 24,
@@ -334,7 +334,7 @@ const AmazingStoryQuestStories = () => {
                           />
                         ) : (
                           <Image
-                            source={require('../../assets/images/gigglelandlol.png')}
+                            source={require('../../../assets/images/gigglelandlol.png')}
                             style={{
                               tintColor: '#f5ae08d6',
                               width: 24,
@@ -350,8 +350,8 @@ const AmazingStoryQuestStories = () => {
                     <Image
                       source={
                         giggleLandFavorites.includes(story.id)
-                          ? require('../../assets/images/starbigOn.png')
-                          : require('../../assets/images/starbigOff.png')
+                          ? require('../../../assets/images/starbigOn.png')
+                          : require('../../../assets/images/starbigOff.png')
                       }
                       style={{ tintColor: '#f5ae08d6', width: 26, height: 24 }}
                     />
@@ -361,7 +361,7 @@ const AmazingStoryQuestStories = () => {
                       activeOpacity={0.7}
                     >
                       <Image
-                        source={require('../../assets/images/playbtn.png')}
+                        source={require('../../../assets/images/playbtn.png')}
                         style={{
                           tintColor: '#f5ae08d6',
                           width: 32,
@@ -377,7 +377,7 @@ const AmazingStoryQuestStories = () => {
                       }
                     >
                       <Image
-                        source={require('../../assets/images/gigglelandshr.png')}
+                        source={require('../../../assets/images/gigglelandshr.png')}
                         style={{
                           tintColor: '#f5ae08d6',
                           width: 26,

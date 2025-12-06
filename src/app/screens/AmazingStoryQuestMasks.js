@@ -1,9 +1,9 @@
-import React, { useCallback } from 'react';
 import { View, Text, Image, StyleSheet, Dimensions } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import AmazingGiggleLandLayout from '../AmazingStoryQuestComponents/AmazingGiggleLandLayout';
+import AmazingGiggleLandLayout from '../../ui/layout/AmazingGiggleLandLayout';
 import { useFocusEffect } from '@react-navigation/native';
-import { useStore } from '../AmazingStoryQuestStore/amazingGiggleQuestContext';
+import { useStore } from '../../core/storage/amazingGiggleQuestContext';
+import React, { useCallback } from 'react';
 
 const giggleLandStoryKey = 'GiggleStoriesMoodScore';
 const giggleLandQuizKey = 'GiggleQuizBestScore';
@@ -39,22 +39,22 @@ export default function AmazingStoryQuestMasks() {
 
   const giggleLandGetStoryMask = () => {
     if (giggleLandStoryScore <= 8)
-      return require('../../assets/images/gigglelandstorymask1.png');
+      return require('../../../assets/images/gigglelandstorymask1.png');
     if (giggleLandStoryScore <= 18)
-      return require('../../assets/images/gigglelandstorymask2.png');
+      return require('../../../assets/images/gigglelandstorymask2.png');
     if (giggleLandStoryScore <= 25)
-      return require('../../assets/images/gigglelandstorymask3.png');
-    return require('../../assets/images/gigglelandstorymask4.png');
+      return require('../../../assets/images/gigglelandstorymask3.png');
+    return require('../../../assets/images/gigglelandstorymask4.png');
   };
 
   const giggleLandGetQuizMask = () => {
     if (giggleLandQuizScore <= 5)
-      return require('../../assets/images/gigglelandquizmask1.png');
+      return require('../../../assets/images/gigglelandquizmask1.png');
     if (giggleLandQuizScore <= 12)
-      return require('../../assets/images/gigglelandquizmask2.png');
+      return require('../../../assets/images/gigglelandquizmask2.png');
     if (giggleLandQuizScore <= 16)
-      return require('../../assets/images/gigglelandquizmask3.png');
-    return require('../../assets/images/gigglelandquizmask4.png');
+      return require('../../../assets/images/gigglelandquizmask3.png');
+    return require('../../../assets/images/gigglelandquizmask4.png');
   };
 
   return (

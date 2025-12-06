@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
   View,
@@ -9,8 +8,9 @@ import {
   StyleSheet,
   Platform,
 } from 'react-native';
-import AmazingGiggleLandLayout from '../AmazingStoryQuestComponents/AmazingGiggleLandLayout';
-import { useStore } from '../AmazingStoryQuestStore/amazingGiggleQuestContext';
+import React, { useState } from 'react';
+import AmazingGiggleLandLayout from '../../ui/layout/AmazingGiggleLandLayout';
+import { useStore } from '../../core/storage/amazingGiggleQuestContext';
 
 const giggleLandStorageFavorites = 'GiggleFavorites';
 const giggleLandStorageRatings = 'GiggleRatings';
@@ -70,7 +70,7 @@ export default function AmazingStoryQuestSettings() {
     <AmazingGiggleLandLayout>
       <View style={styles.giggleLandContainer}>
         <ImageBackground
-          source={require('../../assets/images/gigglelandsettboard.png')}
+          source={require('../../../assets/images/gigglelandsettboard.png')}
           style={styles.giggleLandBoard}
         >
           <Text style={styles.giggleLandTitle}>Settings</Text>
@@ -85,8 +85,8 @@ export default function AmazingStoryQuestSettings() {
                 <Image
                   source={
                     isOnGiggleLandSound
-                      ? require('../../assets/images/gigglelandsetton.png')
-                      : require('../../assets/images/gigglelandsettoff.png')
+                      ? require('../../../assets/images/gigglelandsetton.png')
+                      : require('../../../assets/images/gigglelandsettoff.png')
                   }
                 />
               </TouchableOpacity>
@@ -104,8 +104,8 @@ export default function AmazingStoryQuestSettings() {
               <Image
                 source={
                   isOnGiggleLandVibration
-                    ? require('../../assets/images/gigglelandsetton.png')
-                    : require('../../assets/images/gigglelandsettoff.png')
+                    ? require('../../../assets/images/gigglelandsetton.png')
+                    : require('../../../assets/images/gigglelandsettoff.png')
                 }
               />
             </TouchableOpacity>
@@ -118,7 +118,7 @@ export default function AmazingStoryQuestSettings() {
           >
             <Text style={styles.giggleLandItemText}>Reset Progress</Text>
             <Image
-              source={require('../../assets/images/gigglelandreset.png')}
+              source={require('../../../assets/images/gigglelandreset.png')}
             />
           </TouchableOpacity>
 
@@ -129,7 +129,7 @@ export default function AmazingStoryQuestSettings() {
           >
             <Text style={styles.giggleLandItemText}>Clear Favorite</Text>
             <Image
-              source={require('../../assets/images/gigglelandclear.png')}
+              source={require('../../../assets/images/gigglelandclear.png')}
               style={{ tintColor: '#fff' }}
             />
           </TouchableOpacity>
@@ -138,7 +138,7 @@ export default function AmazingStoryQuestSettings() {
         {giggleLandDialog && (
           <View style={styles.giggleLandOverlay}>
             <ImageBackground
-              source={require('../../assets/images/gigglelandmodalbox2.png')}
+              source={require('../../../assets/images/gigglelandmodalbox2.png')}
               style={styles.giggleLandDialog}
             >
               <Text style={styles.giggleLandDialogText}>
@@ -151,7 +151,7 @@ export default function AmazingStoryQuestSettings() {
             <View style={styles.giggleLandDialogBtns}>
               <TouchableOpacity onPress={() => setGiggleLandDialog(null)}>
                 <Image
-                  source={require('../../assets/images/storydetailsclose.png')}
+                  source={require('../../../assets/images/storydetailsclose.png')}
                 />
               </TouchableOpacity>
 
@@ -163,7 +163,7 @@ export default function AmazingStoryQuestSettings() {
                 }
               >
                 <Image
-                  source={require('../../assets/images/gigglelandyes.png')}
+                  source={require('../../../assets/images/gigglelandyes.png')}
                 />
               </TouchableOpacity>
             </View>
