@@ -1,15 +1,9 @@
 import { View, Text, Image, StyleSheet, Dimensions } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import AmazingGiggleLandLayout from '../../ui/layout/AmazingGiggleLandLayout';
+import AmazingGiggleLandLayout from '../../AmazingStoryQuestCustomDesignedUi/customLayout/AmazingGiggleLandLayout';
 import { useFocusEffect } from '@react-navigation/native';
-import { useStore } from '../../core/storage/amazingGiggleQuestContext';
+import { useStore } from '../../AmazingStoryQuestCore/storage/amazingGiggleQuestContext';
 import React, { useCallback } from 'react';
-
-const giggleLandStoryKey = 'GiggleStoriesMoodScore';
-const giggleLandQuizKey = 'GiggleQuizBestScore';
-
-const giggleLandStoryMax = 30;
-const giggleLandQuizMax = 20;
 
 const { height } = Dimensions.get('window');
 
@@ -28,8 +22,12 @@ export default function AmazingStoryQuestMasks() {
   );
 
   const giggleLandLoadProgress = async () => {
-    const giggleLandStorySaved = await AsyncStorage.getItem(giggleLandStoryKey);
-    const giggleLandQuizSaved = await AsyncStorage.getItem(giggleLandQuizKey);
+    const giggleLandStorySaved = await AsyncStorage.getItem(
+      'GiggleStoriesMoodScore',
+    );
+    const giggleLandQuizSaved = await AsyncStorage.getItem(
+      'GiggleQuizBestScore',
+    );
 
     if (giggleLandStorySaved)
       setGiggleLandStoryScore(Number(giggleLandStorySaved));
@@ -67,7 +65,7 @@ export default function AmazingStoryQuestMasks() {
           />
           <Text style={styles.giggleLandMaskLabel}>Story Mood Mask</Text>
           <Text style={styles.giggleLandScoreText}>
-            {giggleLandStoryScore}/{giggleLandStoryMax}
+            {giggleLandStoryScore}/{30}
           </Text>
         </View>
 
@@ -78,7 +76,7 @@ export default function AmazingStoryQuestMasks() {
           />
           <Text style={styles.giggleLandMaskLabel}>Quiz Wisdom Mask</Text>
           <Text style={styles.giggleLandScoreText}>
-            {giggleLandQuizScore}/{giggleLandQuizMax}
+            {giggleLandQuizScore}/{20}
           </Text>
         </View>
       </View>

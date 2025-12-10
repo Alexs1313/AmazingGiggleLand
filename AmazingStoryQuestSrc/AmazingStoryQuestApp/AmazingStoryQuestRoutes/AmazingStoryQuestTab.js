@@ -5,10 +5,10 @@ import {
   StyleSheet,
   useWindowDimensions,
 } from 'react-native';
-import AmazingStoryQuestStories from '../screens/AmazingStoryQuestStories';
-import AmazingStoryQuestMasks from '../screens/AmazingStoryQuestMasks';
-import AmazingStoryQuestQuiz from '../screens/AmazingStoryQuestQuiz';
-import AmazingStoryQuestSettings from '../screens/AmazingStoryQuestSettings';
+import AmazingStoryQuestStories from '../AmazingStoryQuestScreens/AmazingStoryQuestStories';
+import AmazingStoryQuestMasks from '../AmazingStoryQuestScreens/AmazingStoryQuestMasks';
+import AmazingStoryQuestQuiz from '../AmazingStoryQuestScreens/AmazingStoryQuestQuiz';
+import AmazingStoryQuestSettings from '../AmazingStoryQuestScreens/AmazingStoryQuestSettings';
 
 const Tab = createBottomTabNavigator();
 
@@ -26,10 +26,6 @@ const AmazingStoryQuestTab = () => {
           paddingHorizontal: isLandscape ? '40%' : '28%',
         },
         tabBarActiveTintColor: '#000',
-        tabBarItemStyle: {
-          flexDirection: 'column',
-        },
-        tabBarLabelPosition: 'below-icon',
         tabBarBackground: () => (
           <ImageBackground
             source={require('../../../assets/images/gigglelandtab.png')}

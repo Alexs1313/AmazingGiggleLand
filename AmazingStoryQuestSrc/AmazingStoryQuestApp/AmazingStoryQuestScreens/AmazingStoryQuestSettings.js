@@ -9,13 +9,8 @@ import {
   Platform,
 } from 'react-native';
 import React, { useState } from 'react';
-import AmazingGiggleLandLayout from '../../ui/layout/AmazingGiggleLandLayout';
-import { useStore } from '../../core/storage/amazingGiggleQuestContext';
-
-const giggleLandStorageFavorites = 'GiggleFavorites';
-const giggleLandStorageRatings = 'GiggleRatings';
-const giggleLandStorageStoryMood = 'GiggleStoriesMoodScore';
-const giggleLandStorageQuizScore = 'GiggleQuizBestScore';
+import AmazingGiggleLandLayout from '../../AmazingStoryQuestCustomDesignedUi/customLayout/AmazingGiggleLandLayout';
+import { useStore } from '../../AmazingStoryQuestCore/storage/amazingGiggleQuestContext';
 
 export default function AmazingStoryQuestSettings() {
   const [giggleLandDialog, setGiggleLandDialog] = useState(null);
@@ -49,17 +44,17 @@ export default function AmazingStoryQuestSettings() {
   };
 
   const giggleLandClearFavorites = async () => {
-    await AsyncStorage.removeItem(giggleLandStorageFavorites);
-    await AsyncStorage.removeItem(giggleLandStorageRatings);
-    await AsyncStorage.removeItem(giggleLandStorageStoryMood);
+    await AsyncStorage.removeItem('GiggleFavorites');
+    await AsyncStorage.removeItem('GiggleRatings');
+    await AsyncStorage.removeItem('GiggleStoriesMoodScore');
     setGiggleLandDialog(null);
     setGiggleLandFavorites([]);
   };
 
   const giggleLandResetProgress = async () => {
-    await AsyncStorage.removeItem(giggleLandStorageQuizScore);
-    await AsyncStorage.removeItem(giggleLandStorageStoryMood);
-    await AsyncStorage.removeItem(giggleLandStorageRatings);
+    await AsyncStorage.removeItem('GiggleQuizBestScore');
+    await AsyncStorage.removeItem('GiggleStoriesMoodScore');
+    await AsyncStorage.removeItem('GiggleRatings');
     setGiggleLandRatings({});
     setGiggleLandQuizScore(0);
     setGiggleLandStoryScore(0);

@@ -1,6 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import AmazingGiggleLandLayout from '../../ui/layout/AmazingGiggleLandLayout';
-import { useStore } from '../../core/storage/amazingGiggleQuestContext';
+import AmazingGiggleLandLayout from '../../AmazingStoryQuestCustomDesignedUi/customLayout/AmazingGiggleLandLayout';
+import { useStore } from '../../AmazingStoryQuestCore/storage/amazingGiggleQuestContext';
 import React, { useCallback, useState } from 'react';
 import {
   View,
@@ -16,11 +16,7 @@ import {
 import { useFocusEffect } from '@react-navigation/native';
 
 const { height } = Dimensions.get('window');
-import { giggleLandStoriesData } from '../../core/consts/giggleLandQuizData';
-
-const GIGGLE_LAND_STORY_MOOD = 'GiggleStoriesMoodScore';
-const GIGGLE_LAND_FAVORITES = 'GiggleFavorites';
-const GIGGLE_LAND_RATINGS = 'GiggleRatings';
+import { giggleLandStoriesData } from '../../AmazingStoryQuestCore/consts/giggleLandQuizData';
 
 const AmazingStoryQuestStories = () => {
   const [giggleLandTab, setGiggleLandTab] = useState('all');
@@ -74,38 +70,50 @@ const AmazingStoryQuestStories = () => {
   };
 
   const giggleLandLoadData = async () => {
-    const fav = await AsyncStorage.getItem(GIGGLE_LAND_FAVORITES);
-    const rat = await AsyncStorage.getItem(GIGGLE_LAND_RATINGS);
+    const giggleLandFav = await AsyncStorage.getItem('GiggleFavorites');
+    const giggleLandRating = await AsyncStorage.getItem('GiggleRatings');
 
-    if (fav) setGiggleLandFavorites(JSON.parse(fav));
-    if (rat) setGiggleLandRatings(JSON.parse(rat));
+    if (giggleLandFav) setGiggleLandFavorites(JSON.parse(giggleLandFav));
+    if (giggleLandRating) setGiggleLandRatings(JSON.parse(giggleLandRating));
   };
 
   const giggleLandToggleFavorite = async id => {
-    let newFav = [];
+    let giggleLandNewFav = [];
 
     if (giggleLandFavorites.includes(id))
-      newFav = giggleLandFavorites.filter(f => f !== id);
-    else newFav = [...giggleLandFavorites, id];
-
-    setGiggleLandFavorites(newFav);
-    await AsyncStorage.setItem(GIGGLE_LAND_FAVORITES, JSON.stringify(newFav));
+      giggleLandNewFav = giggleLandFavorites.filter(f => f !== id);
+    else giggleLandNewFav = [...giggleLandFavorites, id];
+    setGiggleLandFavorites(giggleLandNewFav);
+    await AsyncStorage.setItem(
+      'GiggleFavorites',
+      JSON.stringify(giggleLandNewFav),
+    );
   };
 
   const giggleLandSetRating = async (id, value) => {
-    const newRatings = { ...giggleLandRatings, [id]: value };
-    setGiggleLandRatings(newRatings);
+    const giggleLandNewRatings = { ...giggleLandRatings, [id]: value };
+    setGiggleLandRatings(giggleLandNewRatings);
 
-    await AsyncStorage.setItem(GIGGLE_LAND_RATINGS, JSON.stringify(newRatings));
+    await AsyncStorage.setItem(
+      'GiggleRatings',
+      JSON.stringify(giggleLandNewRatings),
+    );
 
-    const newSum = Object.values(newRatings).reduce((a, b) => a + b, 0);
+    const giggleLandNewSum = Object.values(giggleLandNewRatings).reduce(
+      (a, b) => a + b,
+      0,
+    );
 
-    const prev = await AsyncStorage.getItem(GIGGLE_LAND_STORY_MOOD);
-    const best = prev ? Number(prev) : 0;
+    const giggleLandPrev = await AsyncStorage.getItem('GiggleStoriesMoodScore');
+    const giggleLandBest = giggleLandPrev ? Number(giggleLandPrev) : 0;
 
-    const final = newSum > best ? newSum : best;
+    const giggleLandFinal =
+      giggleLandNewSum > giggleLandBest ? giggleLandNewSum : giggleLandBest;
 
-    await AsyncStorage.setItem(GIGGLE_LAND_STORY_MOOD, String(final));
+    await AsyncStorage.setItem(
+      'GiggleStoriesMoodScore',
+      String(giggleLandFinal),
+    );
   };
 
   const giggleLandShareStory = async (title, text) => {
@@ -124,7 +132,9 @@ const AmazingStoryQuestStories = () => {
       : giggleLandStoriesData.filter(st => giggleLandFavorites.includes(st.id));
 
   if (giggleLandOpened) {
-    const story = giggleLandStoriesData.find(s => s.id === giggleLandOpened);
+    const giggleLandStory = giggleLandStoriesData.find(
+      s => s.id === giggleLandOpened,
+    );
 
     return (
       <ImageBackground
@@ -147,21 +157,26 @@ const AmazingStoryQuestStories = () => {
                 marginBottom: 20,
               }}
             >
-              {story.title}
+              {giggleLandStory.title}
             </Text>
 
-            <Image source={story.image} style={styles.giggleLandStoryImage} />
+            <Image
+              source={giggleLandStory.image}
+              style={styles.giggleLandStoryImage}
+            />
 
-            <Text style={styles.giggleLandStorySubitle}>{story.text}</Text>
+            <Text style={styles.giggleLandStorySubitle}>
+              {giggleLandStory.text}
+            </Text>
 
             <View style={styles.giggleLandStarsDetWrap}>
               <TouchableOpacity
-                onPress={() => giggleLandToggleFavorite(story.id)}
+                onPress={() => giggleLandToggleFavorite(giggleLandStory.id)}
                 style={{ alignSelf: 'center' }}
               >
                 <Image
                   source={
-                    giggleLandFavorites.includes(story.id)
+                    giggleLandFavorites.includes(giggleLandStory.id)
                       ? require('../../../assets/images/starbigOn.png')
                       : require('../../../assets/images/starbigOff.png')
                   }
@@ -172,10 +187,10 @@ const AmazingStoryQuestStories = () => {
                 {[1, 2, 3].map(n => (
                   <TouchableOpacity
                     key={n}
-                    onPress={() => giggleLandSetRating(story.id, n)}
+                    onPress={() => giggleLandSetRating(giggleLandStory.id, n)}
                   >
                     <Text style={{ fontSize: 40, marginHorizontal: 4 }}>
-                      {giggleLandRatings[story.id] >= n ? (
+                      {giggleLandRatings[giggleLandStory.id] >= n ? (
                         <Image
                           source={require('../../../assets/images/gigglelandlolact.png')}
                           style={{
@@ -199,7 +214,12 @@ const AmazingStoryQuestStories = () => {
 
               <TouchableOpacity
                 activeOpacity={0.7}
-                onPress={() => giggleLandShareStory(story.title, story.text)}
+                onPress={() =>
+                  giggleLandShareStory(
+                    giggleLandStory.title,
+                    giggleLandStory.text,
+                  )
+                }
               >
                 <Image
                   source={require('../../../assets/images/gigglelandshr.png')}

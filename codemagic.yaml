@@ -4,16 +4,16 @@ workflows:
     max_build_duration: 120
     instance_type: mac_mini_m2
     integrations:
-      app_store_connect: AmazingStoryQuestAPIKey
+      app_store_connect: AmazingStoryQuestNewAPIKey
     environment:
       ios_signing:
         distribution_type: app_store
-        bundle_identifier: com.AmazingStoryQuest
+        bundle_identifier: com.AmazingStoryQuestNew
       vars:
-        BUNDLE_ID: com.AmazingStoryQuest
+        BUNDLE_ID: com.AmazingStoryQuestNew
         XCODE_WORKSPACE: AmazingGiggleLand.xcworkspace
         XCODE_SCHEME: AmazingGiggleLand
-        APP_STORE_APPLE_ID: 6756174765
+        APP_STORE_APPLE_ID: 6756355968
     scripts:
       - name: Install npm dependencies
         script: |

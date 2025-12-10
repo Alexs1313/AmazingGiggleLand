@@ -1,14 +1,8 @@
-import AmazingGiggleLandLayout from '../../ui/layout/AmazingGiggleLandLayout';
-import {
-  Image,
-  ImageBackground,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import AmazingGiggleLandLayout from '../../AmazingStoryQuestCustomDesignedUi/customLayout/AmazingGiggleLandLayout';
+import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
+import AmazingStoryQuestButton from '../../AmazingStoryQuestCustomDesignedUi/customComponents/AmazingStoryQuestButton';
 
 const AmazingStoryQuestOnboarding = () => {
   const [giggleLandCurrentStep, setGiggleLandCurrentStep] = useState(0);
@@ -64,18 +58,13 @@ const AmazingStoryQuestOnboarding = () => {
           />
         )}
 
-        <TouchableOpacity
-          activeOpacity={0.7}
+        <AmazingStoryQuestButton
           onPress={() =>
             giggleLandCurrentStep === 3
               ? navigation.replace('AmazingStoryQuestTab')
               : setGiggleLandCurrentStep(giggleLandCurrentStep + 1)
           }
-        >
-          <Image
-            source={require('../../../assets/images/gigglelandnext.png')}
-          />
-        </TouchableOpacity>
+        />
       </View>
     </AmazingGiggleLandLayout>
   );

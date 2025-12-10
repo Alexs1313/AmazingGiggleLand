@@ -1,6 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import AmazingGiggleLandLayout from '../../ui/layout/AmazingGiggleLandLayout';
-import { useStore } from '../../core/storage/amazingGiggleQuestContext';
+import AmazingGiggleLandLayout from '../../AmazingStoryQuestCustomDesignedUi/customLayout/AmazingGiggleLandLayout';
+import { useStore } from '../../AmazingStoryQuestCore/storage/amazingGiggleQuestContext';
 import React, { useState, useEffect } from 'react';
 import {
   View,
@@ -12,10 +12,8 @@ import {
   Dimensions,
   Vibration,
 } from 'react-native';
-import { giggleLandQuizData } from '../../core/consts/giggleLandQuizData';
+import { giggleLandQuizData } from '../../AmazingStoryQuestCore/consts/giggleLandQuizData';
 const { height } = Dimensions.get('window');
-
-const giggleLandQuizStorageKey = 'GiggleQuizBestScore';
 
 export default function AmazingStoryQuestQuiz() {
   const [giggleLandScreen, setGiggleLandScreen] = useState('intro');
@@ -43,7 +41,7 @@ export default function AmazingStoryQuestQuiz() {
 
   const giggleLandLoadBest = async () => {
     const giggleLandSavedBest = await AsyncStorage.getItem(
-      giggleLandQuizStorageKey,
+      'GiggleQuizBestScore',
     );
     if (giggleLandSavedBest) {
       setGiggleLandBestScore(Number(giggleLandSavedBest));
@@ -54,7 +52,7 @@ export default function AmazingStoryQuestQuiz() {
     if (giggleLandNewScore > giggleLandBestScore) {
       setGiggleLandBestScore(giggleLandNewScore);
       await AsyncStorage.setItem(
-        giggleLandQuizStorageKey,
+        'GiggleQuizBestScore',
         String(giggleLandNewScore),
       );
     }

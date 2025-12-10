@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { WebView } from 'react-native-webview';
 import { View, StyleSheet, Image } from 'react-native';
-import AmazingGiggleLandLayout from '../layout/AmazingGiggleLandLayout';
+import AmazingGiggleLandLayout from '../customLayout/AmazingGiggleLandLayout';
+import { useNavigation } from '@react-navigation/native';
 
 const AmazingStoryQuestLoader = () => {
+  const navigation = useNavigation();
+
   const welcomeLoaderHTML = `
 <!DOCTYPE html>
 <html>
@@ -68,6 +71,12 @@ const AmazingStoryQuestLoader = () => {
 </body>
 </html>
   `;
+
+  useEffect(() => {
+    setTimeout(() => {
+      navigation.replace('AmazingStoryQuestOnboarding');
+    }, 5555);
+  }, []);
 
   return (
     <AmazingGiggleLandLayout>
