@@ -96,7 +96,7 @@ export default function AmazingStoryQuestQuiz() {
     }
 
     if (giggleLandEarned === 0 && isOnGiggleLandVibration) {
-      Vibration.vibrate(50);
+      Vibration.vibrate(120);
     }
 
     setGiggleLandScore(giggleLandTotal);
@@ -377,7 +377,7 @@ const styles = StyleSheet.create({
   giggleLandQuestion: {
     textAlign: 'center',
     fontWeight: '700',
-    fontSize: 18,
+    fontSize: 17,
     color: '#fff',
     paddingHorizontal: 20,
     marginBottom: 15,
@@ -447,13 +447,14 @@ const styles = StyleSheet.create({
     minHeight: 218,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 20,
+    padding: 18,
     marginVertical: 20,
   },
   giggleLandResultText: {
-    fontSize: 18,
+    fontSize: 17,
     textAlign: 'center',
     color: '#fff',
     fontWeight: '700',
+    paddingHorizontal: 20,
   },
 });

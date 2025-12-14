@@ -221,7 +221,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   giggleLandDialogText: {
-    fontSize: 22,
+    fontSize: 19,
     fontWeight: '700',
     textAlign: 'center',
     color: '#fff',

@@ -337,12 +337,12 @@ const AmazingStoryQuestStories = () => {
                   }}
                 />
 
-                <View style={{ marginLeft: 4, flex: 1, alignItems: 'center' }}>
+                <View style={{ flex: 1, alignItems: 'center' }}>
                   <Text style={styles.giggleLandStoryTitle}>{story.title}</Text>
 
                   <View style={{ flexDirection: 'row', marginTop: 2 }}>
                     {[1, 2, 3].map(n => (
-                      <Text key={n} style={{ fontSize: 22, marginRight: 6 }}>
+                      <View key={n} style={{ marginRight: 5 }}>
                         {giggleLandRatings[story.id] >= n ? (
                           <Image
                             source={require('../../../assets/images/gigglelandlolact.png')}
@@ -362,7 +362,7 @@ const AmazingStoryQuestStories = () => {
                             }}
                           />
                         )}
-                      </Text>
+                      </View>
                     ))}
                   </View>
 
@@ -437,12 +437,12 @@ const styles = StyleSheet.create({
   },
   giggleLandStarsWrap: {
     flexDirection: 'row',
-    marginTop: 6,
+    marginTop: 5,
     gap: 16,
     alignItems: 'center',
   },
   giggleLandStoryTitle: {
-    fontSize: 14,
+    fontSize: 13,
     color: '#fff',
     fontWeight: '700',
     marginBottom: 2,

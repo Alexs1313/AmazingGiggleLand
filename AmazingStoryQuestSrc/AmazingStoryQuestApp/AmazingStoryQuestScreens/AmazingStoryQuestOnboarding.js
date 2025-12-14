@@ -1,5 +1,12 @@
 import AmazingGiggleLandLayout from '../../AmazingStoryQuestCustomDesignedUi/customLayout/AmazingGiggleLandLayout';
-import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native';
+import {
+  Image,
+  ImageBackground,
+  Platform,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
 import AmazingStoryQuestButton from '../../AmazingStoryQuestCustomDesignedUi/customComponents/AmazingStoryQuestButton';
@@ -16,7 +23,12 @@ const AmazingStoryQuestOnboarding = () => {
           style={styles.giggleLandBoardCont}
         >
           <Text style={styles.giggleLandTitle}>
-            {giggleLandCurrentStep === 0 && 'Welcome to Amazing Giggle Land!'}
+            {giggleLandCurrentStep === 0 &&
+              Platform.OS === 'ios' &&
+              'Welcome to Amazing Giggle Land!'}
+            {giggleLandCurrentStep === 0 &&
+              Platform.OS === 'android' &&
+              'Welcome to Toto Story Quest!'}
             {giggleLandCurrentStep === 1 && 'Read & Rate Funny Stories'}
             {giggleLandCurrentStep === 2 && 'Complete the Joke Quiz'}
             {giggleLandCurrentStep === 3 && 'Track Your Mood Masks'}
@@ -85,7 +97,7 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   giggleLandSubtitle: {
-    fontSize: 18,
+    fontSize: 16,
     color: '#fff',
     textAlign: 'center',
     fontStyle: 'italic',

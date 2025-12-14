@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { WebView } from 'react-native-webview';
-import { View, StyleSheet, Image } from 'react-native';
+import { View, StyleSheet, Image, Platform } from 'react-native';
 import AmazingGiggleLandLayout from '../customLayout/AmazingGiggleLandLayout';
 import { useNavigation } from '@react-navigation/native';
 
@@ -81,7 +81,14 @@ const AmazingStoryQuestLoader = () => {
   return (
     <AmazingGiggleLandLayout>
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Image source={require('../../../assets/images/gigglelandldr.png')} />
+        {Platform.OS === 'android' ? (
+          <Image
+            source={require('../../../assets/images/icon.png')}
+            style={{ width: 320, height: 320, borderRadius: 52 }}
+          />
+        ) : (
+          <Image source={require('../../../assets/images/gigglelandldr.png')} />
+        )}
       </View>
 
       <View style={styles.loaderWrapper}>
