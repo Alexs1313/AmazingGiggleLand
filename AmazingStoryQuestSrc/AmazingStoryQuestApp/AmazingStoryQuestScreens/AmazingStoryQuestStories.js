@@ -81,7 +81,9 @@ const AmazingStoryQuestStories = () => {
     let giggleLandNewFav = [];
 
     if (giggleLandFavorites.includes(id))
-      giggleLandNewFav = giggleLandFavorites.filter(f => f !== id);
+      giggleLandNewFav = giggleLandFavorites.filter(
+        favorite => favorite !== id,
+      );
     else giggleLandNewFav = [...giggleLandFavorites, id];
     setGiggleLandFavorites(giggleLandNewFav);
     await AsyncStorage.setItem(
@@ -90,8 +92,11 @@ const AmazingStoryQuestStories = () => {
     );
   };
 
-  const giggleLandSetRating = async (id, value) => {
-    const giggleLandNewRatings = { ...giggleLandRatings, [id]: value };
+  const giggleLandSetRating = async (selectedId, selectedValue) => {
+    const giggleLandNewRatings = {
+      ...giggleLandRatings,
+      [selectedId]: selectedValue,
+    };
     setGiggleLandRatings(giggleLandNewRatings);
 
     await AsyncStorage.setItem(
@@ -116,24 +121,26 @@ const AmazingStoryQuestStories = () => {
     );
   };
 
-  const giggleLandShareStory = async (title, text) => {
+  const giggleLandShareStory = async (selectedTitle, selectedText) => {
     try {
       await Share.share({
-        message: `${title}\n\n${text}`,
+        message: `${selectedTitle}\n\n${selectedText}`,
       });
     } catch (error) {
-      console.log('Error sharing story:', error);
+      console.log('Error', error);
     }
   };
 
   const giggleLandVisibleStories =
     giggleLandTab === 'all'
       ? giggleLandStoriesData
-      : giggleLandStoriesData.filter(st => giggleLandFavorites.includes(st.id));
+      : giggleLandStoriesData.filter(story =>
+          giggleLandFavorites.includes(story.id),
+        );
 
   if (giggleLandOpened) {
     const giggleLandStory = giggleLandStoriesData.find(
-      s => s.id === giggleLandOpened,
+      story => story.id === giggleLandOpened,
     );
 
     return (
